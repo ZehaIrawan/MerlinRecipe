@@ -13,6 +13,7 @@ const SearchBar = () => {
         onChange={(e) => onChange(e)}
         placeholder="Find your favorite recipe..."
       ></input>
+      <button>Search</button>
     </div>
   );
 };
