@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { updateKeyword } from '../redux/actions/search';
 
-const SearchBar = () => {
+const SearchBar = ({ updateKeyword }) => {
   const [keyword, setKeyword] = useState('');
 
-  const onChange = (e) => setKeyword(e.target.value);
+  const onChange = (e) => {
+    setKeyword(e.target.value);
+    updateKeyword(e.target.value);
+  };
 
   return (
     <div>
@@ -18,4 +23,12 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+const mapStateToProps = (state) => ({
+  search: state.search,
+});
+
+const mapDispatchToProps = {
+  updateKeyword,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

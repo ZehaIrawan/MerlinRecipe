@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { Provider } from 'react-redux';
 import './App.css';
 import SearchBar from './components/SearchBar';
+import store from './redux/store';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <Provider store={store}>
+      <Fragment>
         <SearchBar></SearchBar>
-      </header>
-    </div>
+      </Fragment>
+    </Provider>
   );
 }
 
