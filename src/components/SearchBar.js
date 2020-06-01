@@ -11,6 +11,7 @@ const SearchBar = ({ updateKeyword }) => {
 
   const onSubmit = () => {
     updateKeyword(keyword);
+    // setKeyword('');
   };
 
   return (

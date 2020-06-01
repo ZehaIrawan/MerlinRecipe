@@ -19,7 +19,7 @@ const SearchResult = ({ keyword }) => {
       setIsLoading(false);
     }
     fetchData();
-  }, [keyword]);
+  }, [keyword, url]);
 
   if (IsLoading) {
     return <div className="loading">Loading ...</div>;
@@ -27,7 +27,11 @@ const SearchResult = ({ keyword }) => {
   return (
     <div>
       {recipes.map((recipe) => (
-        <RecipeCard key={recipe.id} title={recipe.title}></RecipeCard>
+        <RecipeCard
+          key={recipe.id}
+          id={recipe.id}
+          title={recipe.title}
+        ></RecipeCard>
       ))}
     </div>
   );
