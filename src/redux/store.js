@@ -1,9 +1,8 @@
-
 import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import rootReducer from './reducer';
 
-const saveToLocalStorage = state => {
+const saveToLocalStorage = (state) => {
   try {
     const serializedState = JSON.stringify(state);
     localStorage.setItem('search', serializedState);
@@ -27,8 +26,6 @@ const persistedState = loadFromLocalStorage();
 
 const middleWares =
   process.env.NODE_ENV === 'development' ? composeWithDevTools() : undefined;
-
-const initialState = {};
 
 const store = createStore(rootReducer, persistedState, middleWares);
 

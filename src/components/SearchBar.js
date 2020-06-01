@@ -7,7 +7,10 @@ const SearchBar = ({ updateKeyword }) => {
 
   const onChange = (e) => {
     setKeyword(e.target.value);
-    updateKeyword(e.target.value);
+  };
+
+  const onSubmit = () => {
+    updateKeyword(keyword);
   };
 
   return (
@@ -18,7 +21,7 @@ const SearchBar = ({ updateKeyword }) => {
         onChange={(e) => onChange(e)}
         placeholder="Find your favorite recipe..."
       ></input>
-      <button>Search</button>
+      <button onClick={() => onSubmit()}>Search</button>
     </div>
   );
 };
