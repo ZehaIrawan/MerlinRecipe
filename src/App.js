@@ -12,7 +12,7 @@ function App() {
       <Router>
         <Fragment>
           <Switch>
-            <Route exact path="/products" component={Recipe} />
+            <Route exact path="/recipe/:id" component={Recipe} />
             <Route exact path="/" component={Search} />
           </Switch>
         </Fragment>

@@ -1,5 +1,6 @@
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
 import rootReducer from './reducer';
 
 const saveToLocalStorage = (state) => {
@@ -24,8 +25,12 @@ const loadFromLocalStorage = () => {
 
 const persistedState = loadFromLocalStorage();
 
+const thunkMiddleware = [thunk];
+
 const middleWares =
-  process.env.NODE_ENV === 'development' ? composeWithDevTools() : undefined;
+  process.env.NODE_ENV === 'development'
+    ? composeWithDevTools(applyMiddleware(...thunkMiddleware))
+    : applyMiddleware(...thunkMiddleware);
 
 const store = createStore(rootReducer, persistedState, middleWares);
 

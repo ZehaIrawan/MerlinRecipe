@@ -1,6 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { getRecipeById } from '../redux/actions/recipe';
 
-const Recipe = () => {
-  return <div>My Recipe</div>;
+const Recipe = ({ match, getRecipeById, recipe }) => {
+  useEffect(() => {
+    getRecipeById(match.params.id);
+  }, [getRecipeById, match.params.id]);
+
+  if (recipe.loading) {
+    return <p>Loading ...</p>;
+  }
+  return (
+    <div>
+      <h1>{recipe.title}</h1>
+      <img src={recipe.image} alt="" />
+      <p>{recipe.summary}</p>
+    </div>
+  );
 };
-export default Recipe;
+
+const mapStateToProps = (state) => ({
+  recipe: state.recipe.recipeInfo,
+});
+
+export default connect(mapStateToProps, { getRecipeById })(Recipe);
