@@ -12,15 +12,15 @@ const Recipe = ({ match, getRecipeById, recipe }) => {
   }
   return (
     <div>
-      <h1>{recipe.title}</h1>
-      <img src={recipe.image} alt="" />
-      <p>{recipe.summary}</p>
+      <h1>{recipe.recipeInfo.title}</h1>
+      <img src={recipe.recipeInfo.image} alt="" />
+      <p>{recipe.recipeInfo.summary}</p>
     </div>
   );
 };
 
 const mapStateToProps = (state) => ({
-  recipe: state.recipe.recipeInfo,
+  recipe: state.recipe,
 });
 
 export default connect(mapStateToProps, { getRecipeById })(Recipe);
