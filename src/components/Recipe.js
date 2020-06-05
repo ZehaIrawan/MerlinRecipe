@@ -15,6 +15,7 @@ const Recipe = ({ match, getRecipeById, recipe }) => {
       <h1>{recipe.recipeInfo.title}</h1>
       <img src={recipe.recipeInfo.image} alt="" />
       <p>Preparation : {recipe.recipeInfo.preparationMinutes} minutes</p>
+      <p>Cooking : {recipe.recipeInfo.cookingMinutes} minutes</p>
       <p>{recipe.recipeInfo.summary}</p>
     </div>
   );
