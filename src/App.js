@@ -15,7 +15,6 @@ function App() {
           <Switch>
             <Route exact path="/recipe/:id" component={Recipe} />
             <Route exact path="/" component={Homepage} />
-            <Route exact path="/search" component={Search} />
           </Switch>
         </Fragment>
       </Router>

@@ -16,7 +16,6 @@ const Recipe = ({ match, getRecipeById, recipe }) => {
   return (
     <div>
       <Link to="/">Home</Link>
-      <Link to="/search">Search</Link>
       <h1>{recipe.recipeInfo.title}</h1>
       <img src={recipe.recipeInfo.image} alt="" />
       <div> {ReactHtmlParser(recipe.recipeInfo.summary)}</div>

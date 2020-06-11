@@ -7,7 +7,6 @@ const Search = () => {
   return (
     <div>
       <Link to="/">Home</Link>
-      <Link to="/search">Search</Link>
       <SearchBar></SearchBar>
       <SearchResult></SearchResult>
     </div>
