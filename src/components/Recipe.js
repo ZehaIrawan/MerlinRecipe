@@ -10,12 +10,12 @@ const Recipe = ({ match, getRecipeById, recipe }) => {
   if (recipe.loading) {
     return <p>Loading ...</p>;
   }
+  console.log(recipe.recipeInfo.preparationMinutes);
+  console.log(recipe.recipeInfo.title);
   return (
     <div>
       <h1>{recipe.recipeInfo.title}</h1>
       <img src={recipe.recipeInfo.image} alt="" />
-      <p>Preparation : {recipe.recipeInfo.preparationMinutes} minutes</p>
-      <p>Cooking : {recipe.recipeInfo.cookingMinutes} minutes</p>
       <p>{recipe.recipeInfo.summary}</p>
     </div>
   );
