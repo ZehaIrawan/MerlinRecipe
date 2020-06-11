@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import ReactHtmlParser from 'react-html-parser';
 import { connect } from 'react-redux';
 import { getRecipeById } from '../redux/actions/recipe';
 
@@ -15,7 +16,7 @@ const Recipe = ({ match, getRecipeById, recipe }) => {
     <div>
       <h1>{recipe.recipeInfo.title}</h1>
       <img src={recipe.recipeInfo.image} alt="" />
-      <p>{recipe.recipeInfo.summary.slice(1, -1)}</p>
+      <div> {ReactHtmlParser(recipe.recipeInfo.summary)}</div>
     </div>
   );
 };
