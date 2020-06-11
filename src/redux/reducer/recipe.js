@@ -1,9 +1,9 @@
 import { CLEAR_RECIPE, GET_RECIPE_BY_ID } from '../actions/types';
 
 const initialState = {
-  loading: true,
+  loading: false,
   error: {},
-  recipe: {},
+  recipeInfo: {},
 };
 
 const recipe = (state = initialState, action) => {
