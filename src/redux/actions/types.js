@@ -1,4 +1,4 @@
 export const UPDATE_KEYWORD = 'UPDATE_KEYWORD';
 export const GET_RECIPE_BY_ID = 'GET_RECIPE_BY_ID';
 export const RECIPE_ERROR = 'RECIPE_ERROR';
-
+export const CLEAR_RECIPE = 'RECIPE_INFO';

@@ -1,9 +1,9 @@
-import { GET_RECIPE_BY_ID } from '../actions/types';
+import { CLEAR_RECIPE, GET_RECIPE_BY_ID } from '../actions/types';
 
 const initialState = {
-  recipe: [],
   loading: true,
   error: {},
+  recipe: {},
 };
 
 const recipe = (state = initialState, action) => {
@@ -11,6 +11,8 @@ const recipe = (state = initialState, action) => {
   switch (type) {
     case GET_RECIPE_BY_ID:
       return { ...state, recipeInfo: payload, loading: false };
+    case CLEAR_RECIPE:
+      return { ...state, recipeInfo: {}, loading: true };
     default:
       return state;
   }
